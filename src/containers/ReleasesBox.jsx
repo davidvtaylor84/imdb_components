@@ -1,5 +1,4 @@
 import { useState } from "react";
-
 import ReleasesList from "../components/ReleasesList";
 
 const ReleasesBox = ()=>{
@@ -30,14 +29,19 @@ const ReleasesBox = ()=>{
               url: "https://www.imdb.com/title/tt4154664/?ref_=rlm"
             }
           ]
-    )
+    
+    );
+
+    const goToLink = () => {
+        window.open("https://www.imdb.com/calendar/?region=gb")
+    }
 
     return (
         <>
-        <div class="release-box">
+        <div id="release-box">
         <h2>Upcoming Film Releases for UK</h2>
         <ReleasesList releases={releases}/>
-        <button><h2>View more upcoming releases > ></h2></button>
+        <button onClick={goToLink}><h2>View more upcoming releases > >  </h2></button>
         </div>
         </>
     )
